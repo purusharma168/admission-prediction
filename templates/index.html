@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+
+    <h1>Hey welcome to my first project</h1>
+    <h1 >Predict Your chances for Admission</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" name="gre_score" id="gre_score" placeholder="GRE Score">
+            <input type="number" name="toefl_score" id="toefl_score" placeholder="TOEFL Score">
+            <input type="number" name="university_rating" id="university_rating" placeholder="University Rating">
+            <input type="number" name="sop" id="sop" placeholder="SOP Score">
+            <input type="number" name="lor" id="lor" placeholder="LOR Score">
+            <input type="number" name="cgpa" id="cgpa"placeholder="CGPA" step="any">
+            <select name="research" id="research">
+  <option value="yes">Yes</option>
+  <option value="no">No</option>
+</select>
+            <input type="submit" value="Predict">
+        </form>
+        <h1>in this appliction you can  predict chances of admission</h1>
+<p>
+
+The goal here is to find the chance of admission of a candidate based on his/her GRE Score
+(out of 340), TOEFL Score (out of 120), rating of the University (out of 5) in which he/she
+is trying to get admission, Strength of the SOP (out of 5), strength of the Letter Of
+Recommendation (out of 5), CGPA (out of 10) and the research experience (0 or 1).
+</p>
+<h1>made by puru</h1>
+
+    </div>
+</div>
+{% endblock %}
